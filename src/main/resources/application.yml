@@ -1,0 +1,6 @@
+server:
+  port: 8080
+person:
+  name: zhangsan
+  age: 12
+  sex: woman
