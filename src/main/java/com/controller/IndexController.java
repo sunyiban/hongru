@@ -16,7 +16,10 @@ public class IndexController {
 
     @RequestMapping("/index")
     public String index(String name) {
+        if (name != null) {
+            throw new RuntimeException("this is a test exception");
+        }
         return "index";
-    }
+     }
 
 }
