@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "person")
 public class Person {
 
-    public String name;
+    private String name;
 
-    public String age;
+    private String age;
 
-    public String sex;
+    private String sex;
 
     public String getName() {
         return name;

@@ -1,6 +1,5 @@
+spring:
+  profiles:
+    active: dev
 server:
-  port: 8080
-person:
-  name: zhangsan
-  age: 12
-  sex: woman
+  port: 8081

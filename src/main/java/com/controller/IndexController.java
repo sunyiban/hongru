@@ -1,10 +1,11 @@
 package com.controller;
 
 import com.config.Person;
+import com.config.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.websocket.server.PathParam;
 
 /**
  * @autor sunyiban
@@ -18,9 +19,15 @@ public class IndexController {
     @Autowired
     private Person person;
 
-    @RequestMapping("/index")
-    public String index(String name) {
+    @Autowired
+    private SystemConfig systemConfig;
+
+    @RequestMapping("/index/{id}/{name}")
+    public String index(@PathVariable("id") Integer id, @PathVariable("name") String name) {
         System.out.println(person.toString());
+        System.out.println("this is id " + id + "; this is name " + name);
+
+        System.out.println(systemConfig);
 
         if (name != null) {
             throw new RuntimeException("this is a test exception");

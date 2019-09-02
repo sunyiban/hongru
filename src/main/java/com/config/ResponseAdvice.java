@@ -23,7 +23,7 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
     @Override
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class<? extends HttpMessageConverter<?>> aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
-        System.out.println("返回信息：处理时间：" + (RequestInterceptor.startTime.get() - System.currentTimeMillis()));
+        System.out.println("返回信息：处理时间：" + (System.currentTimeMillis() - RequestInterceptor.startTime.get()) + "ms");
         return o;
     }
 }

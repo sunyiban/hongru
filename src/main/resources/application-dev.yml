@@ -1,0 +1,15 @@
+system:
+  setting:
+    name: honru
+  security:
+    sign:
+      privateKey: helowprivatekey
+      publicKey: sahpublickey
+  auth:
+    enable: true
+server:
+  port: 8081
+person:
+  name: zhangsan
+  age: 12
+  sex: woman
