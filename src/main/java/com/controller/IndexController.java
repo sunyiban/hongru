@@ -3,6 +3,8 @@ package com.controller;
 import com.bean.response.IndexResponse;
 import com.config.Person;
 import com.config.SystemConfig;
+import com.interceptor.AuthRequired;
+import com.interceptor.AuthType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,7 @@ public class IndexController {
     @Autowired
     private SystemConfig systemConfig;
 
+    @AuthRequired(value = AuthType.LOGIN)
     @RequestMapping("/index/{id}/{name}")
     public Object index(@PathVariable("id") Integer id, @PathVariable("name") String name) {
         System.out.println("this is id " + id + "; this is name " + name);

@@ -18,9 +18,13 @@ public class CommonInterceptor {
         @Autowired
         private RequestInterceptor requestInterceptor;
 
+        @Autowired
+        private AuthInterceptor authInterceptor;
+
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
             registry.addInterceptor(requestInterceptor);
+            registry.addInterceptor(authInterceptor);
         }
     }
 
