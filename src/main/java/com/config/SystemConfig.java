@@ -14,6 +14,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConfigurationProperties(prefix = "system")
+@Getter
+@Setter
 public class SystemConfig {
     private Setting setting;
     private Security security;
@@ -48,21 +50,5 @@ public class SystemConfig {
     @Setter
     public static class Auth {
         private boolean enabled;
-    }
-
-    public Setting getSetting() {
-        return setting;
-    }
-
-    public void setSetting(Setting setting) {
-        this.setting = setting;
-    }
-
-    public Security getSecurity() {
-        return security;
-    }
-
-    public void setSecurity(Security security) {
-        this.security = security;
     }
 }

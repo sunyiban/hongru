@@ -21,6 +21,7 @@ public class FilterHandler {
     private SystemConfig systemConfig;
 
     @Bean
+    // 只有true的时候过滤器才会生效
     @ConditionalOnProperty(name = "system.auth.enable", havingValue = "true", matchIfMissing = true)
     public FilterRegistrationBean getFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();

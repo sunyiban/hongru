@@ -1,12 +1,18 @@
 system:
   setting:
-    name: honru
+    name: aicity
   security:
+    # 验签配置
     sign:
-      privateKey: helowprivatekey
-      publicKey: sahpublickey
-  auth:
-    enable: true
+      # 如为false，则不进行验签操作
+      enabled: false
+      exclusions: /,*.html,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*,/file/upload
+      rsaPublicKey: MYpOptJt1rn8lsgt3NP0vv700oSXZnz4Ooz4WZWC0Q9yMr8L5MBz4nhMjCULftwTHpGDVKFU
+      rsaPrivateKey: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAIfhMFmVumxySTl84r8xik6m0m3Wu
+    # 鉴权
+    auth:
+      # 如为false，则不进行鉴权操作
+      enabled: true
 server:
   port: 8081
 person:

@@ -39,10 +39,10 @@ public class SignFilter implements Filter {
         System.out.println(request.getRequestURI());
 
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        PrintWriter pw = response.getWriter();
-        pw.write("this is over");
+//        PrintWriter pw = response.getWriter();
+//        pw.write("this is over");
 
-//        filterChain.doFilter(servletRequest, response);
+        filterChain.doFilter(servletRequest, response);
     }
 
     @Override

@@ -29,7 +29,9 @@ public class IndexServiceImplTest {
     public void welcome() {
         System.out.println(person.toString());
 
-        System.out.println(systemConfig.getSecurity());
+        System.out.println(systemConfig.getSecurity().getAuth().isEnabled());
+        System.out.println(systemConfig.getSecurity().getSign().getExclusions());
+        System.out.println(systemConfig.getSetting().getName());
 //
 //        Customer customer = new Customer();
 //        customer.setName("zhangsan");
