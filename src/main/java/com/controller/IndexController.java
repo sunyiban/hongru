@@ -18,14 +18,10 @@ import javax.websocket.server.PathParam;
 public class IndexController {
 
     @Autowired
-    private Person person;
-
-    @Autowired
     private SystemConfig systemConfig;
 
     @RequestMapping("/index/{id}/{name}")
     public Object index(@PathVariable("id") Integer id, @PathVariable("name") String name) {
-        System.out.println(person.toString());
         System.out.println("this is id " + id + "; this is name " + name);
 
 //        测试全局异常捕获
