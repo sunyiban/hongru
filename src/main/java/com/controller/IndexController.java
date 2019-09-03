@@ -28,8 +28,6 @@ public class IndexController {
         System.out.println(person.toString());
         System.out.println("this is id " + id + "; this is name " + name);
 
-        System.out.println(systemConfig);
-
 //        测试全局异常捕获
 //        if (name != null) {
 //            throw new RuntimeException("this is a test exception");
