@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: aicity
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+mybatis:
+  type-aliases-package: com.aicity.entity.dao
+  mapper-locations: classpath:mapper/**/*.xml
+logging:
+  level:
+    com.aicity.dao: DEBUG
+  file: logs/aicity.log
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  type-enums-package: com.aicity.entity.enums
+  mapper-locations: classpath:mapper/**/*.xml
+system:
+  setting:
+    name: aicity
+  security:
+    # 验签配置
+    sign:
+      # 如为false，则不进行验签操作
+      enabled: false
+      exclusions: /,*.html,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*,/file/upload
+      rsaPublicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCH4TBZlbpsckk5fOK/MYpOptJt1rn8lsgt3NP0vv700oSXZnz4Ooz4WZWC0Q9yMr8L5MBz4nhMjCULftwTHpGDVKFUea+69380aDhIro4i6aBoZiCpHNDuGxh9BDKlqzp7lnvEx7+74mpJRMTMlshGYiUrO35QGXspQj7iP+nbXQIDAQAB
+      rsaPrivateKey: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAIfhMFmVumxySTl84r8xik6m0m3WufyWyC3c0/S+/vTShJdmfPg6jPhZlYLRD3IyvwvkwHPieEyMJQt+3BMekYNUoVR5r7r3fzRoOEiujiLpoGhmIKkc0O4bGH0EMqWrOnuWe8THv7viaklExMyWyEZiJSs7flAZeylCPuI/6dtdAgMBAAECgYAr+BOkOY48v3KwdpgNFGPT9amMP3qpoMUgCiBQR2nLIUAkmdaAoLmzN5Ho5eugoYkuuRQJq9QPuR3XrXJbgX3GT+j31lERl5oe9+kEop134g+uL1ROeUahYQZe/mIg1Db0ZvXK/E4mmbLt2TGNtsYvLIM5c2uQvMk0NFl30u7LIQJBAL1/Hxl7bsgb9iAkxWs9DBobVGKq6sY3kBhd25fOT4mei87udxFi4ghObn219zi8frKoKgMP9qG+q0HpaXJhtQUCQQC3kPrA01pDsgPRp7Ux7ryYEZZZZyndMeUFtrUEtV6pZE3E5NWl7ofjbwVBciWN5guRLx63IheNnEwzIne/b9x5AkAoBT37Mr9d0dH0Te/HyzfQF6+FuxUkUb3D96aV9AOGTA644FITQO/90xqwwAp7WAvmDW/5/5gV5t/iZrpXZt1FAkEAi8u3i13qIh/R1Lq5vTspGU5bh96O/UtgNQe9t8ZAPxSKPWZgZqvPhR8pi3vYqcYGDR0rcSBfe5MKXO7k7z/LUQJAZguUIUV748zQkp9kF5KMdiLZFpU7cInBIeP5x2iOVp5Ua3eHYnFfPCoNfTuygTtO0bWOk0f4OSOaqhvddS0HsA==
+    # 鉴权
+    auth:
+      # 如为false，则不进行鉴权操作
+      enabled: true
